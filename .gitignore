@@ -46,3 +46,18 @@ reports/patchcore_v2/figures/
 
 # Generated processed/demo images
 data/processed/*.png
+
+# Frontend dependencies and generated builds
+node_modules/
+frontend/node_modules/
+frontend/dist/
+
+# Local environment files
+.env
+.env.*
+!.env.example
+
+# Local model and dataset artifacts
+artifacts/
+data/raw/
+data/sample/

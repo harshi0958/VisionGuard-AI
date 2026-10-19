@@ -141,3 +141,63 @@ dataset is commercially unrestricted.
 Report measured results with their evaluation scope. Do not describe
 these preliminary scores as guaranteed production accuracy, and do not
 claim real-time performance without measured latency results.
+
+## Run the VisionGuard AI Web Application
+
+The project includes a FastAPI backend and a React + Vite dashboard.
+The trained PatchCore-style model runs on the CPU.
+
+### Prerequisites
+
+- Python 3.13 with the project's virtual environment.
+- Node.js and npm.
+- Existing model memory bank at `artifacts/patchcore_memory.pth`.
+- Existing threshold file at `reports/patchcore_v2/patchcore_thresholds.csv`.
+
+### 1. Install API dependencies
+
+Open PowerShell in the project root:
+
+```powershell
+Set-Location D:\VisionGuardAI
+.\.venv\Scripts\python.exe -m pip install -r requirements-api.txt
+```
+
+### 2. Start the FastAPI backend
+
+Run in a dedicated terminal and keep it open:
+
+```powershell
+Set-Location D:\VisionGuardAI
+$env:PYTHONPATH = "$PWD\src"
+.\.venv\Scripts\python.exe -m uvicorn visionguard.api:app --host 127.0.0.1 --port 8000
+```
+
+- Health check: http://127.0.0.1:8000/api/health
+- Model information: http://127.0.0.1:8000/api/model-info
+- Interactive API documentation: http://127.0.0.1:8000/docs
+
+### 3. Start the React frontend
+
+Open a second terminal:
+
+```powershell
+Set-Location D:\VisionGuardAI\frontend
+npm install
+npm run dev
+```
+
+Open the local URL printed by Vite, normally http://localhost:5173/.
+
+### 4. Inspect an image
+
+Upload a supported image (PNG, JPEG, WEBP, or BMP) and run the AI inspection. The dashboard displays the model prediction, anomaly score, threshold, heatmap, overlay, and defect mask.
+
+The backend limits uploads to 10 MB. Keep the backend running while using the dashboard.
+
+### Notes
+
+- The trained model and threshold files are generated locally and are not committed to Git.
+- The dataset images are excluded from Git by default.
+- If you clone this repository, obtain the required dataset and model artifacts separately, and follow the applicable dataset and pretrained-weight licenses.
+- This is a research prototype, not a certified industrial quality-control system. Predictions can include false positives and missed defects.
