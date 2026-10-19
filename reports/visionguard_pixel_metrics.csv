@@ -1,0 +1,7 @@
+metric,value
+pixel_threshold_validation_p99_5,0.029485777020454407
+defect_images_with_masks,14
+pixel_ROC_AUC,0.6912406971670602
+pixel_IoU,0.0513797482969634
+pixel_Dice,0.09773775532615858
+pixel_threshold_note,Calibrated on normal validation images; preliminary

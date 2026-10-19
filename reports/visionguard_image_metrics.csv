@@ -1,0 +1,11 @@
+metric,value
+image_ROC_AUC,0.5649350649350651
+image_average_precision,0.7325326485109094
+image_threshold_validation_p95,0.0023075871169567106
+true_negative,6
+false_positive,5
+false_negative,7
+true_positive,7
+validation_images,12
+normal_test_images,11
+defect_test_images,14

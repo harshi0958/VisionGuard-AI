@@ -1,0 +1,5 @@
+metric,value
+image_threshold_validation_p95,0.17196869254112243
+pixel_threshold_validation_p99_5,0.3751860558986664
+validation_images,12
+memory_patches,5000

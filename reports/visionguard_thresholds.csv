@@ -1,0 +1,6 @@
+metric,value
+validation_image_threshold,0.0023075871169567106
+validation_pixel_threshold,0.029485777020454407
+validation_image_count,12
+image_percentile,95
+pixel_percentile,99.5

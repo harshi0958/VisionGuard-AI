@@ -1,0 +1,6 @@
+metric,value
+pixel_threshold_validation_p99_5,0.3751860558986664
+defect_images_with_masks,14
+pixel_ROC_AUC,0.9674488741069823
+pixel_IoU,0.3479168011012884
+pixel_Dice,0.5162288960520857
